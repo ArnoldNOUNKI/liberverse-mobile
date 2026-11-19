@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Écran de lancement : fond nuit Liberverse et logo au centre -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/liberverse_night" />
+    <item android:width="96dp" android:height="96dp" android:gravity="center">
+        <bitmap android:gravity="fill" android:src="@mipmap/ic_launcher" />
+    </item>
+</layer-list>

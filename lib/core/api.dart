@@ -85,7 +85,8 @@ class Api {
   }
 
   /// Photos protégées (/media/:id) : l'image doit être demandée avec le cookie de session.
-  String mediaUrl(String? id) => id == null ? '' : '$kBaseUrl/media/$id';
+  // id de média, ou chemin absolu (avatar illustré : /media/avatar/<uid>/<v>)
+  String mediaUrl(String? id) => id == null ? '' : id.startsWith('/') ? '$kBaseUrl$id' : '$kBaseUrl/media/$id';
   Future<Map<String, String>> mediaHeaders() async {
     if (_jar == null) return {};
     final cookies = await _jar!.loadForRequest(Uri.parse(kBaseUrl));
